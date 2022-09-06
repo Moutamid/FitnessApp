@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fitnessapp">
+
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.stepdetector"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:showOnLockScreen="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".RecipesDetails"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".VegetableSubItems"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".WaterIntakeCalculator"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FoodRecipes"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CaloriesCalculator"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BMICalculator"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FitnessNutrition"
+            android:label="@string/title_activity_fitness_nutrition"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ExerciseDetails"
+            android:label="@string/title_activity_exercise_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ExcerciseScreen"
+            android:label="@string/title_activity_excercise_screen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PersonalSettings"
+            android:label="@string/title_activity_personal_settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PersonalDetails"
+            android:label="@string/title_activity_personal_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Login"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SignUp"
+            android:label="@string/title_activity_sign_up"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".Services.StepCountingService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <receiver
+            android:name=".Services.BootReceiver"
+            android:directBootAware="true"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.REBOOT" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Services.AlarmReceiver"
+            android:permission="android.permission.WAKE_LOCK" />
+    </application>
+
+</manifest>

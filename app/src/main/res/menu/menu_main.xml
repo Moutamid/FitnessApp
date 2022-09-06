@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/action_home"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_exercise"
+        android:orderInCategory="100"
+        android:icon="@drawable/exercise_24dp"
+        android:title="Exercises"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_nutrition"
+        android:orderInCategory="100"
+        android:icon="@drawable/plan"
+        android:title="Fitness And Nutrition"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="Settings"
+        app:showAsAction="ifRoom" />
+
+</menu>
